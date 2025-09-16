@@ -20,6 +20,14 @@ class FormContact extends Component
 
         // temporay store in log file
         Log::info('Novo contacto: ' . $this->name . ' - ' . $this->email . ' - ' . $this->phone);
+
+        // // Option 1 - clear form
+        // $this->name = '';
+        // $this->email = '';
+        // $this->phone = '';
+
+        // Option 2 
+        $this->reset();
     }
 
     public function render()
