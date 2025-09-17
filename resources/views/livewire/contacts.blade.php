@@ -27,7 +27,10 @@
 </div> --}}
 
 <div class="card p-5">
-    <p class="mb-3 h5">Contacts</p>
+
+    <h3>CONTACTS</h3>
+
+    <hr>
 
     @if ($contacts->count() === 0)
         <div class="opacity-50">No contacts found</div>
@@ -45,10 +48,10 @@
 
                     <!-- Botões -->
                     <div class="d-flex gap-2">
+                        <a href="{{ route('contacts.edit', ['id' => $contact->id]) }}"
+                            class="btn btn-sm btn-success">Edit</a>
                         <a href="{{ route('contacts.delete', ['id' => $contact->id]) }}"
                             class="btn btn-sm btn-danger">Delete</a>
-                        <a href="{{ route('contacts.edit', ['id' => $contact->id]) }}"
-                            class="btn btn-sm btn-info">Edit</a>
                     </div>
                 </div>
             </div>

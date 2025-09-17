@@ -1,4 +1,9 @@
 <div class="card p-5">
+
+    <h3>NEW CONTACT</h3>
+
+    <hr>
+
     <form wire:submit="newContact">
 
         {{-- ainda n precisa colocar a diretiva @csrf --}}

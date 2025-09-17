@@ -2,6 +2,11 @@
     <div class="row justify-content-center">
         <div class="col-sm-4">
             <div class="card p-5">
+
+                <h3>EDIT CONTACT</h3>
+
+                <hr>
+
                 <form wire:submit="updateContact">
 
                     {{-- ainda n precisa colocar a diretiva @csrf --}}
@@ -29,12 +34,19 @@
                         @enderror
                     </div>
 
-                    <div class="text-end">
-                        <a href="{{ route('home') }}" class="btn btn-secondary.px-5">Cancel</a>
+                    <div class="text-end d-flex">
+                        <a href="{{ route('home') }}" class="btn btn-secondary px-5 me-4">Cancel</a>
                         <button class="btn btn-secondary px-5">Update</button>
                     </div>
 
                 </form>
+
+                @if (session()->has('error'))
+                    <div class="alert alert-danger text-center mt-3">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>
