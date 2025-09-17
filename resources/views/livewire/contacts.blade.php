@@ -1,9 +1,6 @@
 {{-- <div class="card p-5">
-
     <p class="mb-3">Contacts</p>
-
     @if ($contacts->count() === 0)
-
         <div class="opacity-50">No contacts found</div>
     @else
         @foreach ($contacts as $contact)
@@ -22,8 +19,6 @@
             </div>
         @endforeach
     @endif
-
-
 </div> --}}
 
 <div class="card p-5">
@@ -56,5 +51,8 @@
                 </div>
             </div>
         @endforeach
+        <div>
+            {{ $contacts->links() }}
+        </div>
     @endif
 </div>
