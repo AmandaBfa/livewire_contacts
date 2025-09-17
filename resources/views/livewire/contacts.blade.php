@@ -1,4 +1,4 @@
-<div class="card p-5">
+{{-- <div class="card p-5">
 
     <p class="mb-3">Contacts</p>
 
@@ -12,9 +12,11 @@
                     <div class="col-3">Name: {{ $contact->name }}</div>
                     <div class="col-4">Email: {{ $contact->email }}</div>
                     <div class="col-3">Phone: {{ $contact->phone }}</div>
-                    <div class="col text-end">
+                    <div class="col-2 text-end">
                         <a href="{{ route('contacts.delete', ['id' => $contact->id]) }}"
                             class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{ route('contacts.edit', ['id' => $contact->id]) }}"
+                            class="btn btn-sm btn-info">Edit</a>
                     </div>
                 </div>
             </div>
@@ -22,4 +24,34 @@
     @endif
 
 
+</div> --}}
+
+<div class="card p-5">
+    <p class="mb-3 h5">Contacts</p>
+
+    @if ($contacts->count() === 0)
+        <div class="opacity-50">No contacts found</div>
+    @else
+        @foreach ($contacts as $contact)
+            <div class="card bg-dark text-light p-3 mb-2">
+                <div class="d-flex align-items-center justify-content-between">
+
+                    <!-- Informações -->
+                    <div class="d-flex gap-4">
+                        <div><strong>Name:</strong> {{ $contact->name }}</div>
+                        <div><strong>Email:</strong> {{ $contact->email }}</div>
+                        <div><strong>Phone:</strong> {{ $contact->phone }}</div>
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="d-flex gap-2">
+                        <a href="{{ route('contacts.delete', ['id' => $contact->id]) }}"
+                            class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{ route('contacts.edit', ['id' => $contact->id]) }}"
+                            class="btn btn-sm btn-info">Edit</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @endif
 </div>
