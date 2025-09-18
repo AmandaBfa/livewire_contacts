@@ -1,4 +1,5 @@
-![Uploading image.png…]()
+<p align="center"><img src="https://affego-my.sharepoint.com/:f:/r/personal/amanda_ti_affego_com_br/Documents/Imagens/Capturas%20de%20tela?csf=1&web=1&e=WVYEif" width="400"></p>
+
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
