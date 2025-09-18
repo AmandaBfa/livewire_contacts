@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
+use function PHPSTORM_META\type;
+
 class FormContact extends Component
 {
     #[Validate('required|min:3|max:50')]
@@ -46,13 +48,27 @@ class FormContact extends Component
             $this->reset();
 
             // success message 
-            $this->success = "Contact created successfully.";
+            //  // $this->success = "Contact created successfully.";
 
             // create an event
             $this->dispatch('contactAdded');
+
+            // success notification
+            $this->dispatch(
+                'notification',
+                type: 'success',
+                title: 'Contact created successfully.',
+                position: 'center'
+            );
         } else {
             // error message
-            $this->error = "The contact already exists.";
+            //    // $this->error = "The contact already exists.";
+            $this->dispatch(
+                'notification',
+                type: 'error',
+                title: 'The contact already exists.',
+                position: 'center'
+            );
         }
     }
 
